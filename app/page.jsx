@@ -1,9 +1,14 @@
 import Link from 'next/link';
+import Hero from '@/components/Hero';
+import InfoBoxes from '@/components/InfoBoxes';
+import HomeProperties from '@/components/HomeProperties';
+
 const HomePage = () => {
+    console.log(process.env.MONGODB_URI)
     return ( <div>
-        <h1 className="test-3xl">Welcome</h1>
-        <Link href='/properties'>Go to Properties</Link>
+        <Hero />
+        <InfoBoxes />
+        <HomeProperties />
     </div> );
 }
- 
 export default HomePage;
