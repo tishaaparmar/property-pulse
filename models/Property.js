@@ -32,7 +32,7 @@ const PropertySchema = new Schema({
         type: String
     }
 },    
-    bed:{
+    beds:{
         type: Number,
         required: [true, "Number of beds is required"]
     },
@@ -40,8 +40,8 @@ const PropertySchema = new Schema({
         type: Number,
         required: [true, "Number of baths is required"]
     },
-    square_free:{
-        type: String,
+    square_feet:{
+        type: Number,
         required: [true, "Square footage is required"]
     },
     amenities: [
@@ -49,7 +49,7 @@ const PropertySchema = new Schema({
             type: String
         }
     ],
-    rate : {
+    rates : {
         nightly: Number,
         weekly: Number,
         monthly: Number
