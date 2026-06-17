@@ -9,6 +9,7 @@ const PropertyPage = async ({ params }) => {
   const { id } = await params;
   await connectDB();
   const property = await Property.findById(id).lean();
+  property._id = property._id.toString();
   if (!property) {
     return <div>Property not found</div>;
   }
