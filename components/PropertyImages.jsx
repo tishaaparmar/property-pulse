@@ -9,8 +9,8 @@ const PropertyImages = ({ images }) => {
         <div className="container mx-auto">
           {images.length === 1 ? (
             <Item
-              original={image[0]}
-              thumbnail={image[0]}
+              original={images[0]}
+              thumbnail={images[0]}
               width={1800}
               height={400}
             >
@@ -39,8 +39,8 @@ const PropertyImages = ({ images }) => {
                   }`}
                 >
                   <Item
-                    original={image}
-                    thumbnail={image}
+                    original={images}
+                    thumbnail={images}
                     width="1000"
                     height="600"
                   >
