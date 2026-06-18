@@ -15,7 +15,7 @@ const userSchema = new Schema({
         type: String,
         required: [true, "Image is required"]
     },
-    bookmark: [
+    bookmarks: [
     {
         type: Schema.Types.ObjectId,
         ref: 'Property',

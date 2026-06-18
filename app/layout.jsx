@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import '@/assets/styles/globals.css';
 import "leaflet/dist/leaflet.css";
+import { GlobalProvider } from "@/context/GlobalContext";
 
 export const metadata = {
   title: "Property Pulse",
@@ -17,10 +18,12 @@ const MainLayout = ({ children }) => {
     <AuthProvider>
       <html>
         <body>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <ToastContainer />
+          <GlobalProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+            <ToastContainer />
+          </GlobalProvider>
         </body>
       </html>
     </AuthProvider>
