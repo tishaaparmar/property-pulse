@@ -22,14 +22,16 @@ const PropertyCard = ({ property }) => {
 
   return (
     <div className="rounded-xl shadow-md relative">
-      <Image
-        src={property.images[0]}
-        alt={property.name}
-        width={800}
-        height={500}
-        className="w-full h-60 object-cover rounded-t-xl"
-        priority={false}
-      />
+      <Link href={`/properties/${property._id}`}>
+        <Image
+          src={property.images[0]}
+          alt={property.name}
+          width={800}
+          height={500}
+          className="w-full h-60 object-cover rounded-t-xl"
+          priority={false}
+        />
+      </Link>
       <div className="p-4">
         <div className="text-left md:text-center lg:text-left mb-6">
           <div className="text-gray-600">{property.type}</div>
