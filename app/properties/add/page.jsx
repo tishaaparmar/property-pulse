@@ -1,4 +1,5 @@
 import PropertyAddForm from "@/components/PropertyAddForm";
+import {toast} from "react-toastify";
 
 const AddPropertyPage = () => {
     return (
