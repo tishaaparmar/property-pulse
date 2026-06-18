@@ -236,11 +236,6 @@ CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
 
-# OpenStreetMap / Geocoding
-NEXT_PUBLIC_GEOCODE_API=https://nominatim.openstreetmap.org
-
-# Optional
-NODE_ENV=development
 ```
 
 ---
