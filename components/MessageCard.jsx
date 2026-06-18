@@ -61,7 +61,7 @@ export default function MessageCard({message}) {
                 <strong>
                     Recieved : 
                 </strong>{' '}
-                { new Date(message.createdAt).toLocaleString()}    
+                {new Date(message.createdAt).toLocaleString("en-IN")}
             </li>
         </ul>
         <button onClick={handleReadClick} className="mt-4 mr-3 bg-blue-500 text-white py-1 px-3 rounded-md">

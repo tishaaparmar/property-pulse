@@ -69,6 +69,7 @@ async function AddProperty(formData) {
         images: imageUrls,
     });
 
+    console.log("Monthly:", propertyData.rates.monthly);
     await newProperty.save();
 
     revalidatePath('/','/layout');
