@@ -1,14 +1,31 @@
 # 🏠 PropertyPulse
 
-PropertyPulse is a modern full-stack property rental platform built with **Next.js**. The application allows users to discover rental properties, search by location and property type, list their own properties, bookmark favorites, communicate with property owners, and manage listings through a personalized dashboard.
+<p align="center">
+  <img src="./public/screenshots/dashboard.png" alt="PropertyPulse Dashboard" width="100%">
+</p>
 
-The project follows a production-style architecture using the **Next.js App Router**, **MongoDB**, **NextAuth**, **Cloudinary**, **OpenStreetMap**, and **Leaflet** while emphasizing responsive UI, server actions, and modern web development practices.
+<p align="center">
+A modern full-stack property rental platform built with Next.js, MongoDB, NextAuth, Cloudinary, Leaflet, and OpenStreetMap.
+</p>
+
+<p align="center">
+<a href="https://property-pulse-flame-sigma.vercel.app/">🌐 Live Demo</a> •
+<a href="https://github.com/tishaaparmar/property-pulse">💻 GitHub Repository</a>
+</p>
+
+---
+
+# 📖 Overview
+
+PropertyPulse is a full-stack property rental platform that enables users to discover rental properties, search by location and property type, list their own properties, bookmark favorites, communicate with property owners, and manage listings through a personalized dashboard.
+
+The application is built using the Next.js App Router and follows modern web development practices with server-side rendering, authentication, image optimization, and responsive design.
 
 ---
 
 # ✨ Features
 
-## 🔐 Authentication
+## Authentication
 
 - Google Authentication using NextAuth
 - Secure login and logout
@@ -18,121 +35,119 @@ The project follows a production-style architecture using the **Next.js App Rout
 
 ---
 
-## 🏡 Property Listings
+## Property Listings
 
-- Browse all available properties
-- View detailed property pages
-- Featured property listings
-- Responsive property cards
-- Multiple property categories
+- Browse available rental properties
+- Featured property section
+- Detailed property pages
 - Property amenities
 - Seller information
+- Responsive property cards
 
 ---
 
-## ➕ Property Management
+## Property Management
 
 Authenticated users can:
 
 - Add new properties
 - Edit existing properties
-- Delete properties
-- Upload multiple images
-- Manage listings from their profile
+- Delete listings
+- Upload multiple property images
+- Manage listings from their profile dashboard
 
 ---
 
-## ☁️ Image Uploads
+## Cloudinary Integration
 
-- Cloudinary image storage
 - Multiple image uploads
+- Secure cloud storage
 - Optimized image delivery
-- Responsive images with Next.js Image
-- Full-screen image gallery
+- Responsive images
+- Full-screen image gallery using PhotoSwipe
 
 ---
 
-## 🔍 Property Search
+## Property Search
 
 Search properties using:
 
 - Property name
 - Description
+- Street
 - City
 - State
 - Zipcode
-- Street
 - Property type
 
 ---
 
-## ❤️ Saved Properties
+## Bookmarks
 
-- Bookmark favorite properties
-- Remove saved properties
-- Dedicated Saved Properties page
-- Personalized user bookmarks
+- Save favorite properties
+- Remove bookmarks
+- Dedicated bookmarks page
+- Personalized saved listings
 
 ---
 
-## 💬 Messaging System
+## Messaging System
 
 - Contact property owners
-- Receive messages
+- Receive inquiries
 - Reply to messages
-- Delete messages
-- Read/unread status
-- Live unread message count in navbar
+- Delete conversations
+- Read/Unread status
+- Live unread message notifications
 
 ---
 
-## 👤 User Dashboard
+## User Dashboard
 
-- View personal profile
-- Manage property listings
-- Access saved properties
-- Manage received messages
+- Profile management
+- View listed properties
+- Manage saved properties
+- Access received messages
 
 ---
 
-## 📄 Pagination
+## Pagination
 
 - Dynamic pagination
 - Previous & Next navigation
-- Optimized property loading
+- Optimized database queries
 
 ---
 
-## 🗺 Interactive Maps
+## Interactive Maps
 
-Every property includes an interactive map showing its location using:
+Each property includes an interactive map powered by:
 
-- **Leaflet.js**
-- **React Leaflet**
-- **OpenStreetMap**
+- Leaflet
+- React Leaflet
+- OpenStreetMap
 
 Features include:
 
-- Interactive property location
+- Property location marker
 - Zoom controls
-- Marker placement
-- Popup displaying property address
-- Open-source map tiles from OpenStreetMap
+- Interactive map
+- Address popup
 
 ---
 
-## 📱 Responsive Design
+## Responsive Design
 
-- Mobile-friendly interface
+- Mobile-first design
 - Tablet optimized
 - Desktop responsive
-- Modern UI using Tailwind CSS
+- Tailwind CSS UI
 
 ---
 
 # 🛠 Tech Stack
 
-### Frontend
+## Frontend
 
 - Next.js (App Router)
 - React
@@ -140,36 +155,37 @@ Features include:
 - React Icons
 - React Toastify
 
-### Backend
+## Backend
 
 - Next.js Server Actions
 - MongoDB
 - Mongoose
 
-### Authentication
+## Authentication
 
 - NextAuth
 - Google OAuth
 
-### Cloud Storage
+## Cloud Storage
 
 - Cloudinary
 
-### Maps
+## Maps
 
 - Leaflet
 - React Leaflet
 - OpenStreetMap
 
-### Image Gallery
+## Image Gallery
 
 - PhotoSwipe
+- React PhotoSwipe Gallery
 
 ---
 
-# 📂 Project Structure
+# 📂 Folder Structure
 
-```
+```text
 app/
 │
 ├── actions/
@@ -195,10 +211,10 @@ utils/
 
 # 🚀 Getting Started
 
-## Clone the Repository
+## Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/property-pulse.git
+git clone https://github.com/tishaaparmar/property-pulse.git
 ```
 
 ```bash
@@ -215,9 +231,9 @@ npm install
 
 ---
 
-## Create Environment Variables
+## Environment Variables
 
-Create a `.env.local` file in the root directory and add the following:
+Create a `.env.local` file.
 
 ```env
 # MongoDB
@@ -235,22 +251,29 @@ GOOGLE_CLIENT_SECRET=
 CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
-
 ```
 
 ---
 
-## Run the Development Server
+## Run the Project
 
 ```bash
 npm run dev
 ```
 
-Open your browser and visit:
+Open:
 
 ```
 http://localhost:3000
 ```
+
+---
+
+# 📸 Application Preview
+
+## Home Page
+
+<img src="./screenshots/dashboard.png" width="100%">
 
 ---
 
@@ -264,61 +287,62 @@ tailwindcss
 mongoose
 next-auth
 cloudinary
-react-icons
-react-toastify
 leaflet
 react-leaflet
 photoswipe
 react-photoswipe-gallery
+react-icons
+react-toastify
 ```
 
 ---
 
-# 📚 Key Concepts Practiced
+# 📚 Concepts Practiced
 
 - Next.js App Router
 - Server Components
 - Client Components
 - Dynamic Routing
 - Server Actions
+- CRUD Operations
 - Authentication
 - Authorization
-- CRUD Operations
 - MongoDB & Mongoose
-- Cloudinary Image Uploads
+- Cloudinary Integration
+- Image Optimization
 - Interactive Maps
 - Property Search
 - Pagination
 - Bookmark System
 - Messaging System
 - Reply Functionality
-- Responsive UI Design
+- Responsive UI
 - Error Handling
 - Loading States
-- Image Optimization
 
 ---
 
 # 🌟 Highlights
 
-- Google authentication with protected routes
-- Cloudinary image uploads
-- Responsive property listings
-- Advanced property search
-- Bookmark favorite properties
-- Internal messaging system with replies
-- Unread message notifications
-- Interactive maps using Leaflet & OpenStreetMap
-- Image gallery with full-screen viewing
-- Mobile-first responsive design
+- Google Authentication
+- Property CRUD Operations
+- Cloudinary Image Uploads
+- Property Search
+- Bookmarks
+- Internal Messaging
+- Reply Functionality
+- Unread Notifications
+- Interactive Maps
+- Full-Screen Image Gallery
+- Responsive Design
+- Production Deployment on Vercel
 
 ---
 
 # 🔮 Future Improvements
 
-- Advanced filters (price, bedrooms, amenities)
-- Property reviews and ratings
-- Recently viewed properties
+- Advanced property filters
+- Property reviews
 - Email notifications
 - Real-time messaging
 - Admin dashboard
@@ -329,9 +353,9 @@ react-photoswipe-gallery
 
 ---
 
-# 📄 License
+# 🌐 Live Demo
 
-This project is intended for educational and portfolio purposes.
+https://YOUR_VERCEL_LINK
 
 ---
 
@@ -339,6 +363,12 @@ This project is intended for educational and portfolio purposes.
 
 **Tisha Parmar**
 
-GitHub: https://github.com/your-github-username
+GitHub: https://github.com/tishaaparmar
 
-LinkedIn: https://linkedin.com/in/your-linkedin-profile
+LinkedIn: https://www.linkedin.com/in/YOUR-LINKEDIN
+
+---
+
+# 📄 License
+
+This project is intended for educational and portfolio purposes.
