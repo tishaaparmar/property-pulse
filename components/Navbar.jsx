@@ -237,55 +237,95 @@ const Navbar = () => {
       </div>
 
       {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-      {isMobileMenuOpen && (
-        <div id="mobile-menu">
-          <div className="space-y-1 px-2 pb-3 pt-2">
-            <Link
-              href="/"
-              className={`${
-                pathname === "/" ? "bg-black" : ""
-              } text-white block rounded-md px-3 py-2 text-base font-medium`}
-            >
-              Home
-            </Link>
-            <Link
-              href="/properties"
-              className={`${
-                pathname === "/properties" ? "bg-black" : ""
-              } text-white block rounded-md px-3 py-2 text-base font-medium`}
-            >
-              Properties
-            </Link>
-            {session && (
-              <>
-                <Link
-                  href="/properties/add"
-                  className={`${
-                    pathname === "/properties/add" ? "bg-black" : ""
-                  } text-white block rounded-md px-3 py-2 text-base font-medium`}
-                >
-                  Add Property
-                </Link>
+      {/* Mobile menu */}
+{isMobileMenuOpen && (
+  <div id="mobile-menu" className="md:hidden bg-blue-700 border-t border-blue-500">
+    <div className="space-y-1 px-2 pb-3 pt-2">
 
-                <Link
-                  href="/properties/saved"
-                  className={`${
-                    pathname === "/properties/saved" ? "bg-black" : ""
-                  } text-white block rounded-md px-3 py-2 text-base font-medium`}
-                >
-                  Bookmarks
-                </Link>
-              </>
-            )}
-            {!session && (
-              <button className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-4">
-                <i className="fa-brands fa-google mr-2"></i>
-                <span>Login or Register</span>
-              </button>
-            )}
-          </div>
-        </div>
+      <Link
+        href="/"
+        onClick={() => setIsMobileMenuOpen(false)}
+        className={`${
+          pathname === "/" ? "bg-black" : ""
+        } text-white block rounded-md px-3 py-2 text-base font-medium`}
+      >
+        Home
+      </Link>
+
+      <Link
+        href="/properties"
+        onClick={() => setIsMobileMenuOpen(false)}
+        className={`${
+          pathname === "/properties" ? "bg-black" : ""
+        } text-white block rounded-md px-3 py-2 text-base font-medium`}
+      >
+        Properties
+      </Link>
+
+      {session ? (
+        <>
+          <Link
+            href="/properties/add"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`${
+              pathname === "/properties/add" ? "bg-black" : ""
+            } text-white block rounded-md px-3 py-2 text-base font-medium`}
+          >
+            Add Property
+          </Link>
+
+          <Link
+            href="/properties/saved"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`${
+              pathname === "/properties/saved" ? "bg-black" : ""
+            } text-white block rounded-md px-3 py-2 text-base font-medium`}
+          >
+            Bookmarks
+          </Link>
+
+          <Link
+            href="/messages"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-white block rounded-md px-3 py-2 text-base font-medium"
+          >
+            Messages
+          </Link>
+
+          <Link
+            href="/profile"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-white block rounded-md px-3 py-2 text-base font-medium"
+          >
+            Profile
+          </Link>
+
+          <button
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              signOut();
+            }}
+            className="w-full text-left text-white bg-red-600 hover:bg-red-700 rounded-md px-3 py-2"
+          >
+            Sign Out
+          </button>
+        </>
+      ) : (
+        providers &&
+        Object.values(providers).map((provider) => (
+          <button
+            key={provider.id}
+            onClick={() => signIn(provider.id)}
+            className="w-full flex items-center justify-center text-white bg-gray-700 hover:bg-gray-900 rounded-md px-3 py-2"
+          >
+            <FaGoogle className="mr-2" />
+            Login or Register
+          </button>
+        ))
       )}
+    </div>
+  </div>
+)}
     </nav>
   );
 };
