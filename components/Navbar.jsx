@@ -7,8 +7,7 @@ import logo from "@/assets/styles/images/logo-white.png";
 import profileDefault from "@/assets/styles/images/profile.png";
 import { FaGoogle } from "react-icons/fa";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import UnreadMessageCount from '@/components/UnreadMessageCount';
-
+import UnreadMessageCount from "@/components/UnreadMessageCount";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -238,94 +237,99 @@ const Navbar = () => {
 
       {/* <!-- Mobile menu, show/hide based on menu state. --> */}
       {/* Mobile menu */}
-{isMobileMenuOpen && (
-  <div id="mobile-menu" className="md:hidden bg-blue-700 border-t border-blue-500">
-    <div className="space-y-1 px-2 pb-3 pt-2">
+      {isMobileMenuOpen && (
+        <div
+          id="mobile-menu"
+          className="md:hidden bg-blue-700 border-t border-blue-500"
+        >
+          <div className="space-y-1 px-2 pb-3 pt-2">
+            <Link
+              href="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`${
+                pathname === "/" ? "bg-black" : ""
+              } text-white block rounded-md px-3 py-2 text-base font-medium`}
+            >
+              Home
+            </Link>
 
-      <Link
-        href="/"
-        onClick={() => setIsMobileMenuOpen(false)}
-        className={`${
-          pathname === "/" ? "bg-black" : ""
-        } text-white block rounded-md px-3 py-2 text-base font-medium`}
-      >
-        Home
-      </Link>
+            <Link
+              href="/properties"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`${
+                pathname === "/properties" ? "bg-black" : ""
+              } text-white block rounded-md px-3 py-2 text-base font-medium`}
+            >
+              Properties
+            </Link>
 
-      <Link
-        href="/properties"
-        onClick={() => setIsMobileMenuOpen(false)}
-        className={`${
-          pathname === "/properties" ? "bg-black" : ""
-        } text-white block rounded-md px-3 py-2 text-base font-medium`}
-      >
-        Properties
-      </Link>
+            {session ? (
+              <>
+                <Link
+                  href="/properties/add"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`${
+                    pathname === "/properties/add" ? "bg-black" : ""
+                  } text-white block rounded-md px-3 py-2 text-base font-medium`}
+                >
+                  Add Property
+                </Link>
 
-      {session ? (
-        <>
-          <Link
-            href="/properties/add"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={`${
-              pathname === "/properties/add" ? "bg-black" : ""
-            } text-white block rounded-md px-3 py-2 text-base font-medium`}
-          >
-            Add Property
-          </Link>
+                <Link
+                  href="/properties/saved"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`${
+                    pathname === "/properties/saved" ? "bg-black" : ""
+                  } text-white block rounded-md px-3 py-2 text-base font-medium`}
+                >
+                  Bookmarks
+                </Link>
 
-          <Link
-            href="/properties/saved"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={`${
-              pathname === "/properties/saved" ? "bg-black" : ""
-            } text-white block rounded-md px-3 py-2 text-base font-medium`}
-          >
-            Bookmarks
-          </Link>
+                <Link
+                  href="/messages"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-white block rounded-md px-3 py-2 text-base font-medium"
+                >
+                  Messages
+                </Link>
 
-          <Link
-            href="/messages"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white block rounded-md px-3 py-2 text-base font-medium"
-          >
-            Messages
-          </Link>
+                <Link
+                  href="/profile"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-white block rounded-md px-3 py-2 text-base font-medium"
+                >
+                  Profile
+                </Link>
 
-          <Link
-            href="/profile"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white block rounded-md px-3 py-2 text-base font-medium"
-          >
-            Profile
-          </Link>
-
-          <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              signOut();
-            }}
-            className="w-full text-left text-white bg-red-600 hover:bg-red-700 rounded-md px-3 py-2"
-          >
-            Sign Out
-          </button>
-        </>
-      ) : (
-        providers &&
-        Object.values(providers).map((provider) => (
-          <button
-            key={provider.id}
-            onClick={() => signIn(provider.id)}
-            className="w-full flex items-center justify-center text-white bg-gray-700 hover:bg-gray-900 rounded-md px-3 py-2"
-          >
-            <FaGoogle className="mr-2" />
-            Login or Register
-          </button>
-        ))
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    signOut();
+                  }}
+                  className="w-full text-left text-white bg-red-600 hover:bg-red-700 rounded-md px-3 py-2"
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              providers &&
+              Object.values(providers).map((provider) => (
+                <button
+                  key={provider.id}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    signIn(provider.id);
+                  }}
+                  className="w-full flex items-center justify-center text-white bg-gray-700 hover:bg-gray-900 rounded-md px-3 py-2"
+                >
+                  <FaGoogle className="mr-2" />
+                  Login or Register
+                </button>
+              ))
+            )}
+          </div>
+        </div>
       )}
-    </div>
-  </div>
-)}
     </nav>
   );
 };
